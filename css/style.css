@@ -5,7 +5,7 @@
 
 :root {
   --main-color: rgb(134, 2, 2);
-  --secondary-color: #d1cbcbcb;
+  --secondary-color: #d2cccc;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: var(--main-color);
-  font-size: 1.4em;
+  font-size: 1.8em;
 }
 
 .container .main {
@@ -44,7 +44,7 @@ body {
   border: 2px solid var(--main-color);
   padding: 40px 20px;
   color: var(--main-color);
-  background-color: rgba(167, 167, 167, 0.171);
+  background-color: #d6d0d0;
 }
 
 .container .main .controls div:not(:last-of-type) {
@@ -64,7 +64,7 @@ body {
   font-size: 1.02em;
   border: none;
   border-radius: 5px;
-  background-color: rgba(211, 124, 124, 0.473);
+  background-color: #d37c7c79;
 }
 
 .container .main .controls div button:hover {
@@ -74,36 +74,21 @@ body {
 
 .active-button {
   box-shadow: 1px 1px 10px 0.2px rgb(61, 56, 56);
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: var(--main-color) !important;
+  color: #fff !important;
 }
 /* End Controls Styling */
 
 /* Start Grid Styling */
 .container .main .grid {
-  height: 642px;
-  width: 642px;
+  height: 644px;
+  width: 644px;
   border: 2px solid var(--main-color);
   display: flex;
   flex-wrap: wrap;
 }
 
 .square {
-  border: 1px solid rgb(48, 48, 48);
-}
-
-.large-square {
-  width: 80px;
-  height: 80px;
-}
-
-.meduim-square {
-  width: 40px;
-  height: 40px;
-}
-
-.small-square {
-  width: 20px;
-  height: 20px;
+  border: 1px solid rgba(167, 167, 167, 0.61);
 }
 /* End Grid Styling */
