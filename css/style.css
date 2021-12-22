@@ -65,7 +65,7 @@ body {
   font-size: 1.02em;
   border: none;
   border-radius: 5px;
-  background-color: #d37c7c79;
+  background-color: #d4afaf;
 }
 
 .container .main .controls div button:hover {
@@ -107,7 +107,7 @@ hr {
   padding-top: 10px;
   color: var(--main-color);
   height: 7vh;
-  background-color: #d37c7c79;
+  background-color: #d4afaf;
 }
 
 .footer p {

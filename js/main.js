@@ -26,41 +26,25 @@ function attachHoverEvent(square) {
 
 function changeColor(e) {
   let activePenControl = getActivePenControl();
-  if (!activePenControl) e.target.style.backgroundColor = "#d37c7c79";
+  if (!activePenControl) e.target.style.backgroundColor = "#d4afaf";
   else if (activePenControl.classList.contains("rainbower"))
     e.target.style.backgroundColor = generateRandomColor();
-  else if (activePenControl.classList.contains("shadower"))
-    e.target.style.backgroundColor =
-      "#" +
-      convertDecimalToHex(
-        parseInt(`0x${rgbToHex(e.target.style.backgroundColor).slice(1)}`) -
-          parseInt(`0x${rgbToHex(e.target.style.backgroundColor).slice(1)}`) /
-            0xf
-      );
-  else if (activePenControl.classList.contains("eraser"))
+  else if (activePenControl.classList.contains("shadower")) {
+    let squareColor = e.target.style.backgroundColor;
+    e.target.style.backgroundColor = addShadow(squareColor);
+  } else if (activePenControl.classList.contains("eraser"))
     e.target.style.backgroundColor = "#d6d0d0";
 }
 
-function rgbToHex(rgbColor) {
-  let decimalColors = rgbColor.match(/[\d.]+/g);
-  let hexColors = [];
-  for (let i = 0; i < decimalColors.length; i++) {
-    hexColors.push(convertDecimalToHex(parseInt(decimalColors[i])));
+function addShadow(color, shadowRate = 0.06) {
+  let rgbColors = color.match(/[\d]+/g);
+  let shadowedRgbColors = [];
+  for (let i = 0; i < rgbColors.length; i++) {
+    shadowedRgbColors.push(
+      parseInt(rgbColors[i]) - parseInt(rgbColors[i]) * shadowRate
+    );
   }
-  return `#${hexColors.join("")}`;
-}
-
-function convertDecimalToHex(decimalNumber) {
-  let hexNumber = "";
-  while (decimalNumber != 0) {
-    let reminder = decimalNumber % 16;
-    if (reminder > 9) {
-      reminder = String.fromCharCode(reminder + 55);
-    }
-    hexNumber = reminder + hexNumber;
-    decimalNumber = Math.floor(decimalNumber / 16);
-  }
-  return hexNumber;
+  return `rgba(${shadowedRgbColors.join(", ")})`;
 }
 
 function getActivePenControl() {
