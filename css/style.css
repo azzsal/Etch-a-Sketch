@@ -18,11 +18,12 @@ body {
 .container {
   width: 1200px;
   margin: auto;
+  margin-top: 70px;
+  margin-bottom: 72px;
 }
 
 .container .header {
-  margin-bottom: 85px;
-  margin-top: 85px;
+  margin-bottom: 46px;
   text-align: center;
   text-transform: uppercase;
   color: var(--main-color);
@@ -92,3 +93,25 @@ body {
   border: 1px solid rgba(167, 167, 167, 0.61);
 }
 /* End Grid Styling */
+
+/* Start Footer Styling */
+hr {
+  color: var(--main-color);
+  margin: 0;
+}
+
+.footer {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  color: var(--main-color);
+  height: 7vh;
+  background-color: #d37c7c79;
+}
+
+.footer p {
+  margin: 0;
+  margin-bottom: 8px;
+}
+/* End Footer Styling */
